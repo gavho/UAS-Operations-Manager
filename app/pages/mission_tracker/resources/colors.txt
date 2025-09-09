@@ -1,0 +1,6 @@
+gold = #968237
+gray5 = #141414
+gray4 = #1e1e1e
+gray3 = #2b2b29
+gray2 = #565d63
+gray1 = #6c757d

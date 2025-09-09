@@ -1,0 +1,423 @@
+/* =================================================================
+ * Overall Dark Theme & Global Styles
+ * =================================================================
+ * This section defines the foundational colors and properties for the entire application.
+ * All widgets inherit these styles unless overridden by a more specific rule.
+ */
+
+QMainWindow {
+    background-color: #2b2b29; /* Dark gray for the main window background */
+    color: #eceff4;           /* Off-white color for default text */
+}
+
+QWidget {
+    border-radius: 8px; /* Apply rounded corners to all widgets for a modern look */
+}
+
+/* =================================================================
+ * Mission Editor Form Styles (QDockWidget)
+ * =================================================================
+ * These styles specifically target the mission editor panel. They
+ * are crucial for its overall appearance and legibility.
+ */
+
+/* The main container for the mission editor */
+QDockWidget {
+    border: 1px solid #1e1e1e; /* A subtle border that matches the window background */
+}
+
+/* The content area within the QDockWidget */
+QDockWidget > QWidget, QDockWidget QWidget {
+    background-color: #1e1e1e; /* Ensures the background of the form itself is dark */
+}
+
+/* The title bar of the dock widget */
+QDockWidget::title {
+    background-color: #ffffff;
+    color: #1e1e1e;
+    padding: 8px;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    text-transform: uppercase;
+    font-family: "Conthrax Sb";
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+/* Specific styling for the main "Mission Editor" label to match the title bar color */
+QLabel#labelMissionEditorTitle {
+    color: #ffffff;
+    background-color: #6c757d;
+    padding: 5px;
+}
+
+/* General styling for all labels in the form */
+QLabel {
+    color: #eceff4;           /* Light text color for high contrast against the dark background */
+    background-color: transparent; /* Makes sure the label background is transparent */
+    font-weight: 400;
+    padding: 2px;
+    font-family: "Conthrax Sb";
+}
+
+/* =================================================================
+ * Input Widget Styling
+ * =================================================================
+ * This section handles the appearance of all user input fields within the mission editor.
+ * The selectors are now more specific to ensure they override any default styles.
+ */
+
+/* Styling for single-line text input fields */
+QDockWidget QLineEdit {
+    background-color: #6c757d; /* A darker blue-gray for the input fields' background */
+    color: #eceff4;           /* Light text color for readability */
+    border: 1px solid #6c757d;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+/* Styling for dropdown combo boxes */
+QDockWidget QComboBox {
+    background-color: #6c757d; /* Background for the main combo box area */
+    color: #eceff4;           /* Light text color for the selected item */
+    border: 1px solid #6c757d;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+/* Styling for multi-line text edit fields */
+QDockWidget QPlainTextEdit {
+    background-color: #6c757d; /* Same background as QLineEdit for consistency */
+    color: #eceff4;
+    border: 1px solid #6c757d;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+/* Styling for the QDateEdit widget */
+QDockWidget QDateEdit {
+    background-color: #6c757d; /* A distinct gray for the date editor */
+    color: #eceff4;
+    border: 1px solid #6c757d;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+/* Specific size adjustments for the large text areas */
+#commentsInput, #rawMetarInput {
+    min-height: 100px;
+    max-height: 100px;
+}
+
+/* Specific size adjustments for the smaller text areas */
+#outcomeInput, #issuesOperatorInput, #issuesHwInput, #issuesSwInput {
+    min-height: 50px;
+    max-height: 50px;
+}
+
+/* =================================================================
+ * Combo Box Specific Styling
+ * ================================================================= */
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 20px;
+    border-left-width: 1px;
+    border-left-color: #4c566a;
+    border-left-style: solid;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    /* --- UPDATED: Changed dropdown button to a darker color for better arrow visibility --- */
+    background-color: #6c757d;
+}
+
+QComboBox::down-arrow {
+    image: url(:/icons/chevron-down.svg);
+    width: 12px;
+    height: 12px;
+}
+
+QComboBox QAbstractItemView {
+    background-color: #6c757d;           /* A distinct gray for the dropdown list background */
+    color: #eceff4;
+    selection-background-color: #5e81ac; /* A blue highlight color for selected items in the list */
+}
+
+/* =================================================================
+ * Button Styling
+ * ================================================================= */
+
+QPushButton {
+    background-color: #5e81ac; /* A light blue color for primary buttons */
+    color: #eceff4;           /* Light text color for readability */
+    border: 1px solid #4c566a;
+    padding: 6px 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+QPushButton:hover {
+    background-color: #968237; /* Gold/yellow color on hover to give feedback */
+    color: #2e3440;           /* Dark text color on hover for contrast */
+}
+
+QPushButton:pressed {
+    background-color: #81a1c1; /* A lighter blue color when the button is pressed */
+    border-style: inset;
+}
+
+/* =================================================================
+ * Table Widget Styling
+ * =================================================================
+ * These styles define the look of the main mission table.
+ */
+
+QTableWidget {
+    background-color: #565d63;           /* A neutral gray for the table background */
+    alternate-background-color: #6c757d; /* A slightly darker gray for alternating rows */
+    border: 1px solid #2b2b29;           /* A dark border to blend with the window */
+    gridline-color: #6c757d;
+    font-family: "Roboto";
+    font-size: 11pt;
+    border-radius: 5px;
+    selection-background-color: #968237; /* A gold color for selecting rows */
+    padding: 20px;
+    margin: 20px;
+}
+
+QTableWidget::item {
+    color: #eceff4;           /* Light text color for table cells */
+    background-color: transparent;
+}
+
+QTableWidget::item:selected {
+    background-color: #968237; /* Light blue color for selected cells */
+}
+
+/* --- NEW: Styling for cells with unsaved changes --- */
+QTableWidget::item[unsaved="true"] {
+    background-color: #968237; /* Use gold for the background to highlight changes */
+    color: #2e3440;           /* Darker text color for readability on the gold background */
+}
+
+QHeaderView {
+    background-color: #3b4252;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+QHeaderView::section {
+    background-color: #434c5e;
+    color: #eceff4;
+    padding: 4px;
+    border: transparent;
+    font-weight: bold;
+    font-size: 11pt;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+QTableWidget QHeaderView::section {
+    background-color: #6c757d;           /* A dark gray for the table header sections */
+    color: #eceff4;
+    padding: 4px;
+    border: transparent;
+    font-family: "Conthrax Sb";          /* Custom font for the headers */
+    font-size: 11pt;
+}
+
+/* =================================================================
+ * Scroll Bar Styling
+ * ================================================================= */
+QScrollBar:vertical {
+    border: 1px solid #4c566a;
+    background-color: #2e3440; /* Dark gray for the scrollbar track */
+    width: 15px;
+    margin: 22px 0 22px 0;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #6c757d; /* Lighter gray for the draggable handle */
+    min-height: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    border: 1px solid #4c566a;
+    background-color: #6c757d; /* Same color as handle for the buttons */
+    height: 20px;
+    subcontrol-origin: margin;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:vertical {
+    subcontrol-position: bottom;
+}
+
+QScrollBar::sub-line:vertical {
+    subcontrol-position: top;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: 1px solid #4c566a;
+    background-color: #2e3440; /* Dark gray for the scrollbar track */
+    height: 15px;
+    margin: 0 22px 0 22px;
+    border-radius: 5px;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #6c757d; /* Lighter gray for the draggable handle */
+    min-width: 20px;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    border: 1px solid #4c566a;
+    background-color: #6c757d; /* Same color as handle for the buttons */
+    width: 20px;
+    subcontrol-origin: margin;
+    border-radius: 5px;
+}
+
+QScrollBar::add-line:horizontal {
+    subcontrol-position: right;
+}
+
+QScrollBar::sub-line:horizontal {
+    subcontrol-position: left;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+/* =================================================================
+ * Toolbar Styling
+ * ================================================================= */
+
+QToolBar {
+    background-color: #2b2b29;
+    border: none;
+    padding: 5px;
+    spacing: 0px;
+}
+
+QToolButton {
+    background-color: transparent;
+    border-radius: 0;
+    color: #eceff4;
+    border: 1px solid transparent;
+    padding: 6px 12px;
+    font-weight: 600;
+}
+
+QToolButton:hover {
+    background-color: #6c757d;
+}
+
+/* =================================================================
+ * QMessageBox (Notification/Dialog Box) Styling
+ * =================================================================
+ * These styles ensure dialog boxes are also dark-themed.
+ */
+QMessageBox {
+    background-color: #2b2b29; /* Dark gray background for the dialog box */
+    color: #eceff4;           /* Light text color */
+}
+
+QMessageBox QLabel {
+    color: #eceff4;           /* Ensures the text in the dialog is readable */
+    /* --- UPDATED: Set font family to Roboto for consistency --- */
+    font-family: "Roboto";
+}
+
+QMessageBox QPushButton {
+    background-color: #6c757d; /* Matches the main button style */
+    color: #eceff4;
+    border: 1px solid #4c566a;
+    padding: 6px 12px;
+    text-align: center;
+    border-radius: 5px;
+    font-family: "Roboto";
+    font-size: 11pt;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #968237;
+    color: #2e3440;
+}
+
+/* =================================================================
+ * Calendar Widget Styling (For QDateEdit)
+ * =================================================================
+ * This section ensures the calendar popup is readable within the dark theme.
+ */
+QCalendarWidget {
+    background-color: #1e1e1e;
+    color: #eceff4;
+    selection-background-color: #5e81ac;
+    selection-color: #ffffff;
+    border: 1px solid #4c566a;
+    border-radius: 5px;
+}
+
+QCalendarWidget QWidget#qt_calendar_navigationbar {
+    background-color: #434c5e; /* A medium blue-gray for the navigation bar */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+QCalendarWidget QToolButton {
+    color: #eceff4;
+    background-color: #434c5e;
+    border: none;
+}
+
+QCalendarWidget QToolButton:hover {
+    background-color: #968237; /* Gold hover color from your button scheme */
+}
+
+QCalendarWidget QToolButton:pressed {
+    background-color: #81a1c1; /* Lighter blue pressed color */
+}
+
+QCalendarWidget QMenu {
+    background-color: #434c5e; /* Matching background for the year/month dropdown */
+    color: #eceff4;
+}
+
+QCalendarWidget QAbstractItemView {
+    color: #eceff4;
+    background-color: #2b2b29; /* A darker background for the day view */
+    selection-background-color: #5e81ac; /* Blue selection highlight */
+    outline: none;
+    border: none;
+}
+
+/* Style for the day names (Mon, Tue, etc.) and disabled days */
+QCalendarWidget QAbstractItemView:disabled {
+    color: #6c757d; /* Muted color for disabled days */
+}
+
+/* Style for the current day */
+QCalendarWidget QAbstractItemView::item:selected {
+    border: 1px solid #968237; /* Gold border for selected days */
+}
