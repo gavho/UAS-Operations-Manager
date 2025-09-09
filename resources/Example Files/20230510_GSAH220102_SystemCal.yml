@@ -1,0 +1,75 @@
+platform: Freefly ALTA X
+model: Mojave (XP3)
+serial: GSAH220102
+sensors:
+  - id: RX1RM2
+    model: DSC-RX1RM2
+    serial: 6314615
+    type: RGB
+    date: 2023-05-10
+    lever_arm:
+      x: 0.26
+      y: -0.005
+      z: -0.001
+    boresight:
+      omega: 179.90359
+      phi: -0.080475247
+      kappa: -89.871956
+    camera:
+      type: frame
+      model: SMAC
+      xp: 11.715605
+      yp: -6.0726024
+      c: 7501.81
+      image_width: 7952
+      image_height: 5304
+      k1: -1.2994276e-09
+      k2: -2.4497719e-17
+      k3: 0
+      k4: 3.3753637e-08
+      k5: -1.1149951e-07
+      k6: 0
+      r0: 0
+  
+  - id: VLP32C
+    model: Ultra Puck
+    serial: 12202192178452
+    type: LiDAR
+    date: 2023-05-10
+    lever_arm:
+      x: -0.090
+      y: -0.032
+      z: 0.014
+    boresight:
+      omega: 0.643826
+      phi: -0.140786
+      kappa: -0.432196
+    nominal_boresight:
+      omega: 90.0
+      phi: -90.0
+      kappa: 0.0
+  
+  - id: nHS-196
+    model: Nano-Hyperspec
+    type: VNIR
+    date: 2023-05-10
+    time_delay0: 0.0
+    lever_arm:
+      x: 0.177
+      y: -0.039
+      z: 0.028
+    boresight:
+      omega: 0.429985
+      phi: 0.240289
+      kappa: -0.199364
+    camera:
+      type: pushbroom
+      pixel_size: 0.0074
+      f: 8.255
+      image_width: 640
+      
+  - id: APX-15
+    model: APX-15Lv3
+    serial: 5841C00586
+    type: GNSS
+  
